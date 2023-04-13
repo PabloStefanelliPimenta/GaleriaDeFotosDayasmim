@@ -1,148 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Galeria de Fotos da Yasmim</title>
-	<style>
-		.container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-			gap: 10px;
-		}
-		.container img {
-			width: 300px;
-			height: 300px;
-			object-fit: cover;
-			border-radius: 10px;
-			cursor: pointer;
-		}
-		.container p {
-			margin-top: 5px;
-			text-align: center;
-			font-weight: bold;
-		}
-		.modal {
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			background-color: rgba(0, 0, 0, 0.7);
-			padding: 20px;
-			border-radius: 10px;
-			display: none;
-			z-index: 1;
-		}
-		.modal img {
-			max-width: 90vw;
-			max-height: 90vh;
-			object-fit: contain;
-		}
-		.modal p {
-			margin-top: 10px;
-			color: white;
-			text-align: center;
-			font-weight: bold;
-		}
-		.modal .close {
-			position: absolute;
-			top: 10px;
-			right: 10px;
-			color: white;
-			font-size: 30px;
-			font-weight: bold;
-			cursor: pointer;
-		}
-	</style>
-	<script>
-		function openModal(imgSrc, imgAlt, imgTitle) {
-				const modal = document.querySelector(".modal");
-				const modalImg = modal.querySelector("img");
-				const modalTitle = modal.querySelector("p");
-				modalImg.src = imgSrc;
-				modalImg.alt = imgAlt;
-				modalTitle.textContent = imgTitle;
-				modal.style.display = "block";
-		}
-		function closeModal() {
-				const modal = document.querySelector(".modal");
-				modal.style.display = "none";
-		}
-	</script>
-</head>
-<body>
-	<h1>Galeria de Fotos da Yasmim</h1>
-	<div class="container">
-		<div>
-			<img src="Yasmi.jpg" alt="Yasmim 1" onclick="openModal(this.src, this.alt, 'Yasmim 1')">
-			<p>Yasmim 1</p>
-		</div>
-		<div>
-			<img src="yasmi2.jpg" alt="Yasmim 2" onclick="openModal(this.src, this.alt, 'Yasmim 2')">
-			<p>Yasmim 2</p>
-		</div>
-		<div>
-			<img src="yasmi3.jpg" alt="Yasmim 3" onclick="openModal(this.src, this.alt, 'Yasmim 3')">
-			<p>Yasmim 3</p>
-		</div>
-		<div>
-			<img src="yasmi4.jpg" alt="Yasmim 4" onclick="openModal(this.src, this.alt, 'Yasmim 4')">
-			<p>Yasmim 4</p>
-		</div>
-		<div>
-			<img src="yasmi5.jpg" alt="Yasmim 5" onclick="openModal(this.src, this.alt, 'Yasmim 5')">
-			<p>Yasmim 5</p>
-		</div>
-		<div>
-			<img src="yasmi6.jpg" alt="Yasmim 6" onclick="openModal(this.src, this.alt, 'Yasmim 6')">
-			<p>Yasmim 6</p>
-		</div>
-		<div>
-			<img src="yasmi7.jpg" alt="Yasmim 7" onclick="openModal(this.src, this.alt, 'Yasmim 7')">
-			<p>Yasmim 7</p>
-		</div>
-		<div>
-			<img src="yasmi8.jpg" alt="Yasmim 8" onclick="openModal(this.src, this.alt, 'Yasmim 8')">
-			<p>Yasmim 8</p>
-		</div>
-		<div>
-			<img src="yasmi9.jpg" alt="Yasmim 9" onclick="openModal(this.src, this.alt, 'Yasmim 9')">
-			<p>Yasmim 9</p>
-		</div>
-		<div>
-			<img src="yasmi10.jpg" alt="Yasmim 10" onclick="openModal(this.src, this.alt, 'Yasmim 10')">
-			<p>Yasmim 10</p>
-		</div>
-		<div>
-			<img src="yasmi11.jpg" alt="Yasmim 11" onclick="openModal(this.src, this.alt, 'Yasmim 11')">
-			<p>Yasmim 11</p>
-		</div>
-		<div>
-			<img src="yasmi12.jpg" alt="Yasmim 12" onclick="openModal(this.src, this.alt, 'Yasmim 12')">
-			<p>Yasmim 12</p>
-		</div>
-		<div>
-			<img src="yasmi13.jpg" alt="Yasmim 13" onclick="openModal(this.src, this.alt, 'Yasmim 13')">
-			<p>Yasmim 13</p>
-		</div>
-		<div>
-			<img src="yasmi14.jpg" alt="Yasmim 14" onclick="openModal(this.src, this.alt, 'Yasmim 14')">
-			<p>Yasmim 14</p>
-		</div>
-		<div>
-            <img src="yasmi15.jpg" alt="Yasmim 15" onclick="openModal(this.src, this.alt, 'Yasmim 15')">
-			<p>Yasmim 15</p>
-		</div>
-		<div>
-			<img src="yasmi17.jpg" alt="Yasmim 16" onclick="openModal(this.src, this.alt, 'Yasmim 16')">
-			<p>Yasmim 16</p>
-		</div>
-	</div>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Login</h1>
+      <form>
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" required>
+        <br>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" required>
+        <br>
+        <button type="button" onclick="login()">Entrar</button>
+      </form>
+    </div>
+    
+    <style>
+      .login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
 
-	<div class="modal">
-		<span class="close" onclick="closeModal()">&times;</span>
-		<img src="" alt="" class="modal-img">
-		<p class="modal-title"></p>
-	</div>
-</body>
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+input {
+  width: 250px;
+  height: 30px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  width: 150px;
+  height: 40px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+    </style>
+    <script>
+      function login() {
+        // Recupere o nome de usuário e senha inseridos pelo usuário
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        
+        // Verifique se as informações de login são válidas
+        if (username == 'yasmim' && password == 'amorzinho') {
+          // Armazene as informações de login na memória local do navegador
+          localStorage.setItem('logado', 'true');
+          
+          // Redirecione o usuário para a página protegida se as informações de login forem válidas
+          window.location.href = 'paginaprotegida.html';
+        } else {
+          // Exiba uma mensagem de erro se as informações de login forem inválidas
+          alert('Usuário ou senha inválidos.');
+        }
+      }
+    </script>
+  </body>
 </html>
