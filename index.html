@@ -15,6 +15,7 @@
         <input type="password" id="password" required>
         <br>
         <button type="button" onclick="login()">Entrar</button>
+        <p>Ainda não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a>.</p>
       </form>
     </div>
     
@@ -74,7 +75,7 @@ button:hover {
         var password = document.getElementById('password').value;
         
         // Verifique se as informações de login são válidas
-        if (username == 'yasmim' && password == 'amorzinho') {
+        if (localStorage.getItem(username) == password) {
           // Armazene as informações de login na memória local do navegador
           localStorage.setItem('logado', 'true');
           
