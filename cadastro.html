@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+      body {
+        background-color: #f2f2f2;
+      }
+      
+      .cadastro-container {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      
+      h1 {
+        margin-top: 0;
+        font-size: 32px;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: left;
+      }
+      
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+      
+      button {
+        background-color: #1e90ff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #007bff;
+      }
+      
+      p {
+        font-size: 14px;
+        margin-top: 20px;
+      }
+      
+      a {
+        color: #1e90ff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cadastro-container">
+      <h1>Cadastro</h1>
+      <form>
+        <label for="new-username">Novo usuário:</label>
+        <input type="text" id="new-username" required>
+        <br>
+        <label for="new-password">Nova senha:</label>
+        <input type="password" id="new-password" required>
+        <br>
+        <button type="button" onclick="cadastro()">Cadastrar</button>
+      </form>
+      <p>Já tem uma conta? <a href="login.html">Faça login aqui</a>.</p>
+    </div>
+    
+    <script>
+      function cadastro() {
+        // Recupere o nome de usuário e senha inseridos pelo usuário
+        var newUsername = document.getElementById('new-username').value;
+        var newPassword = document.getElementById('new-password').value;
+        
+        
+        
+        // Verifique se o nome de usuário já está sendo usado
+        if (localStorage.getItem(newUsername)) {
+            
+          alert('Este nome de usuário já está sendo usado. Por favor, escolha outro.');
+        } else {
+          // Armazene o novo nome de usuário e senha na memória local do navegador
+          localStorage.setItem(newUsername, newPassword);
+          
+          // Redirecione o usuário para a página de login após o cadastro bem-sucedido
+          alert('Cadastro realizado com sucesso! Por favor, faça login com suas novas credenciais.');
+          window.location.href = 'login.html';
+        }
+      }
+    </script>
+  </body>
+</html>
